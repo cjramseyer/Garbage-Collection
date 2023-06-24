@@ -4,7 +4,7 @@
 
 ## End of Support
 
-Home Assistant has introduced local calendars in 2022, in the 2023.1 release they added an option for different recurent events. With this, most of the functionality of this custom helper is supported natively. So I will end developing and supporting this helper in 2023.
+Home Assistant has introduced local calendars in 2022, in the 2023.1 release they added an option for different recurent events. With this, most of the functionality of this custom helper is supported natively. So I will end developing and supporting this helper in 2023.  (Note: This is from the original author.  I am experimenting with the local calendar function, however, Garbage Collection is not simply a weekly appointment, and may have different rules varying by country events (holidays) that may cause a temporary shift in the schedule.  I am reconsidering reviving this plugin and its original functionality based on the original author's work.)
 
 ## Table of Contents
 
