@@ -5,6 +5,7 @@
 ## Renewed usage
 
 I have used this HACS integration, and I very much appreciated the use of this.  However, the local calendar function in HA falls very short of replacing this integration.  I don't want to undo what the original author created, however, I will do my best to maintain this iteration of this awesome solution.
+
 (NOTE from original author): Home Assistant has introduced local calendars in 2022, in the 2023.1 release they added an option for different recurent events. With this, most of the functionality of this custom helper is supported natively. So I will end developing and supporting this helper in 2023.
 
 ## Table of Contents
