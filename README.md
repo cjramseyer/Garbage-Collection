@@ -1,10 +1,11 @@
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration) [![Garbage-Collection](https://img.shields.io/github/v/release/bruxy70/Garbage-Collection.svg?1)](https://github.com/bruxy70/Garbage-Collection) ![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration) [![Garbage-Collection](https://img.shields.io/github/v/release/cjramseyer/Garbage-Collection.svg?1)](https://github.com/cjramseyer/Garbage-Collection) ![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)
 
 [![Buy me a coffee](https://img.shields.io/static/v1.svg?label=Buy%20me%20a%20coffee&message=🥨&color=black&logo=buy%20me%20a%20coffee&logoColor=white&labelColor=6f4e37)](https://www.buymeacoffee.com/3nXx0bJDP)
 
-## End of Support
+## Renewed usage
 
-Home Assistant has introduced local calendars in 2022, in the 2023.1 release they added an option for different recurent events. With this, most of the functionality of this custom helper is supported natively. So I will end developing and supporting this helper in 2023.
+I have used this HACS integration, and I very much appreciated the use of this.  However, the local calendar function in HA falls very short of replacing this integration.  I don't want to undo what the original author created, however, I will do my best to maintain this iteration of this awesome solution.
+(NOTE from original author): Home Assistant has introduced local calendars in 2022, in the 2023.1 release they added an option for different recurent events. With this, most of the functionality of this custom helper is supported natively. So I will end developing and supporting this helper in 2023.
 
 ## Table of Contents
 
@@ -40,11 +41,11 @@ You can also configure seasonal calendars (e.g. for bio-waste collection), by co
 And you can `group` entities, which will merge multiple schedules into one sensor.
 
 These are some examples using this sensor. The Lovelace config examples are included below.
-<img src="https://github.com/bruxy70/Garbage-Collection/blob/master/images/picture-entity.png">
+<img src="https://github.com/cjramseyer/Garbage-Collection/blob/master/images/picture-entity.png">
 
-<img src="https://github.com/bruxy70/Garbage-Collection/blob/master/images/entities.png">
+<img src="https://github.com/cjramseyer/Garbage-Collection/blob/master/images/entities.png">
 
-<img src="https://github.com/bruxy70/Garbage-Collection/blob/master/images/sensor.png">
+<img src="https://github.com/cjramseyer/Garbage-Collection/blob/master/images/sensor.png">
 
 <img src="https://github.com/amaximus/garbage-collection-card/blob/master/garbage_collection_lovelace.jpg">
 
@@ -53,7 +54,7 @@ These are some examples using this sensor. The Lovelace config examples are incl
 ### MANUAL INSTALLATION
 
 1. Download the
-   [latest release](https://github.com/bruxy70/garbage_collection/releases/latest).
+   [latest release](https://github.com/cjramseyer/garbage_collection/releases/latest).
 2. Unpack the release and copy the `custom_components/garbage_collection` directory
    into the `custom_components` directory of your Home Assistant
    installation.
@@ -158,12 +159,12 @@ The Public Holidays **blueprints** use a separate custom helper **Holidays**, av
 
 | <!-- -->                                                                                                                                                                                                                                                                                                                                                                            | <!-- -->                                                                                                                                                                                                                                                                                                                                                                                                   |
 | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fmove_on_holiday.yaml)                      | Move the collection to the next day, if the collection falls on public holiday                                                                                                                                                                                                                                                                                                                             |
-| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fmove_on_holiday_with_include_exclude.yaml) | Remove events falling on provided "exclude" list of dates. Then check the calendar of public holidays and move events that fall on a public holiday to the next day. Finally, add additional events on dates from "include" list.                                                                                                                                                                          |
-| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fholiday_in_week.yaml)                      | Move forward one day if a public holiday was in the collection week, before or on the collection day (and keep moving if the new collection day also falls on a holiday)                                                                                                                                                                                                                                   |
-| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fmultiple_holidays_in_week.yaml)            | Move forward by a day for each public holiday was in the collection week, before or on the collection day (and keep moving if the new collection day also falls on a holiday). So if there were two public holidays, move by two days.                                                                                                                                                                     |
-| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fmove_on_holiday_carry_over.yaml)           | Move forward by one day if there was a public holiday in the collection week, before or on the collection day (and keep moving if the new collection day also falls on a holiday). Only move by one day, but if there was more than one public holiday in the week, carry it over to the following week. So if there were 2 public holidays this week, move it by one day this week and one day next week. |
-| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fskip_holday.yaml)                          | Skip the holiday                                                                                                                                                                                                                                                                                                                                                                                           |
+| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fmove_on_holiday.yaml)                      | Move the collection to the next day, if the collection falls on public holiday                                                                                                                                                                                                                                                                                                                             |
+| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fmove_on_holiday_with_include_exclude.yaml) | Remove events falling on provided "exclude" list of dates. Then check the calendar of public holidays and move events that fall on a public holiday to the next day. Finally, add additional events on dates from "include" list.                                                                                                                                                                          |
+| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fholiday_in_week.yaml)                      | Move forward one day if a public holiday was in the collection week, before or on the collection day (and keep moving if the new collection day also falls on a holiday)                                                                                                                                                                                                                                   |
+| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fmultiple_holidays_in_week.yaml)            | Move forward by a day for each public holiday was in the collection week, before or on the collection day (and keep moving if the new collection day also falls on a holiday). So if there were two public holidays, move by two days.                                                                                                                                                                     |
+| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fmove_on_holiday_carry_over.yaml)           | Move forward by one day if there was a public holiday in the collection week, before or on the collection day (and keep moving if the new collection day also falls on a holiday). Only move by one day, but if there was more than one public holiday in the week, carry it over to the following week. So if there were 2 public holidays this week, move it by one day this week and one day next week. |
+| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fskip_holday.yaml)                          | Skip the holiday                                                                                                                                                                                                                                                                                                                                                                                           |
 
 ### Include and Exclude
 
@@ -171,21 +172,21 @@ A list of fixed dates to include and exclude from the calculated schedule.
 
 | <!-- -->                                                                                                                                                                                                                                                                                                                                                       | <!-- -->            |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------ |
-| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Finclude_exclude.yaml) | Include and Exclude |
-| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Finclude.yaml)         | Include             |
-| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fexclude.yaml)         | Exclude             |
+| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Finclude_exclude.yaml) | Include and Exclude |
+| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Finclude.yaml)         | Include             |
+| [![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fexclude.yaml)         | Exclude             |
 
 ### Offset
 
 The offset blueprint will move the calculated collections by a number of days. This can be used, for example, to schedule collection for last Saturday each month - just set the collection to the first Saturday each month and offset it by -7 days.
 
-[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Foffset.yaml)
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Foffset.yaml)
 
 ### Import txt
 
 This **blueprint** requires a `command_line` sensor reading content of a txt file, containig a set of dates, one per line.
 
-[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fimport_txt.yaml)
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fimport_txt.yaml)
 
 <details>
 <summary>command_line sensor example</summary>
@@ -223,9 +224,9 @@ sensor:
 
 This will create a schedule on a fixed date each month. For example on the 3rd each month. The helper does not allow it, as it is generally designed around paterns evolving around weekly schedules (since garbage collection typically happens on a set day in a week, rather than set day in a month). But few of you wanted that, so here you go.
 
-[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fmonthly_fixed_date.yaml) One fixed date
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fmonthly_fixed_date.yaml) One fixed date
 
-[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fbruxy70%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fmonthly_fixed_two_dates.yaml) Two dates
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fcjramseyer%2FGarbage-Collection%2Fblob%2Fmaster%2Fblueprints%2Fmonthly_fixed_two_dates.yaml) Two dates
 
 ## STATE AND ATTRIBUTES
 
@@ -265,7 +266,7 @@ It will set the `last_collection` attribute to the current date and time.
 
 There are standard [blueprints](#blueprints-for-manual-update) provided to handle manual updates - to move collection on public holidays or offset the collection.
 
-If these **blueprints** do not work for you, you can create your own custom rules to handle any scenario. If you do so, please share the blueprints with the others by posting them to the [blueprints directory](https://github.com/bruxy70/Garbage-Collection/tree/master/blueprints) - someone else might find them useful. Thanks!
+If these **blueprints** do not work for you, you can create your own custom rules to handle any scenario. If you do so, please share the blueprints with the others by posting them to the [blueprints directory](https://github.com/cjramseyer/Garbage-Collection/tree/master/blueprints) - someone else might find them useful. Thanks!
 To help you with creating custom automations, see the following examples:
 
 ## _!!! Advanced !!! If you think this is too complicated, then this is not for you!!!_
@@ -455,7 +456,7 @@ You can use the custom [garbage collection card](https://github.com/amaximus/gar
 
 This is what I use (I like images). I use a horizontal stack of picture-entities, with `card-templater` plugin ([Lovelace Card Templater](https://github.com/gadgetchnnel/lovelace-card-templater)) to show the number of days:
 
-<img src="https://github.com/bruxy70/Garbage-Collection/blob/master/images/picture-entity.png">
+<img src="https://github.com/cjramseyer/Garbage-Collection/blob/master/images/picture-entity.png">
 
 (The `state` is designed to be used as traffic lights. That's why it has 3 values. You obviously cannot use this with `verbose_state`)
 
@@ -482,7 +483,7 @@ This is the configuration
 
 The simplest visualization is to use entities. In this case, I use `verbose_state` to show `state` as text.
 
-<img src="https://github.com/bruxy70/Garbage-Collection/blob/master/images/entities.png">
+<img src="https://github.com/cjramseyer/Garbage-Collection/blob/master/images/entities.png">
 
 Lovelace configuration
 
@@ -497,7 +498,7 @@ Lovelace configuration
 
 ## Icon view (glance)
 
-<img src="https://github.com/bruxy70/Garbage-Collection/blob/master/images/sensor.png">
+<img src="https://github.com/cjramseyer/Garbage-Collection/blob/master/images/sensor.png">
 
 Lovelace Configuration
 
