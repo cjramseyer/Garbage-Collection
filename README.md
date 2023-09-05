@@ -1,4 +1,4 @@
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration) [![Garbage-Collection](https://img.shields.io/github/v/release/cjramseyer/Garbage-Collection.svg?1)](https://github.com/cjramseyer/Garbage-Collection) ![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration) [![Garbage-Collection](https://img.shields.io/github/v/release/cjramseyer/Garbage-Collection.svg?1)](https://github.com/cjramseyer/Garbage-Collection) ![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)
 
 ## Renewed usage
 
